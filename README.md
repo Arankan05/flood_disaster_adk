@@ -34,6 +34,10 @@ cp .env.example flood_disaster_assistant/.env   # then add your own API key
 adk web          # run from this folder, then pick flood_disaster_assistant
 ```
 
+Model: `gemini-3.5-flash-lite` (older 2.5 models return 404 for new API keys).
+The free tier allows 15 requests per minute and one full question uses about
+11 model calls, so wait about a minute between test prompts.
+
 Tool tests (no API key needed): `pip install pytest && python -m pytest -q tests`
 
 Do not submit `.env`, the virtual environment, or any API key.
