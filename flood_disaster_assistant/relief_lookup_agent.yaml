@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: relief_lookup_agent
+agent_class: LlmAgent
+model: gemini-2.5-flash
+description: Finds the listed relief point for the area and assistance type.
+instruction: |
+  Call find_relief_point once with area "{area?}" and assistance_type
+  "{assistance_type?}".
+  Reply with the returned result only, as compact "field: value" lines,
+  copying every value exactly (relief_id, area, assistance_type, name,
+  location_description, services, recorded_status, source_id,
+  effective_date, data_status). If the status is NOT_FOUND or
+  NEEDS_CLARIFICATION, reply with that status and the returned message or
+  options. Do not add anything.
+include_contents: none
+disallow_transfer_to_parent: true
+disallow_transfer_to_peers: true
+output_key: relief_result
+tools:
+  - name: flood_disaster_assistant.tools.find_relief_point
+before_agent_callbacks:
+  - name: flood_disaster_assistant.callbacks.workflow_gate

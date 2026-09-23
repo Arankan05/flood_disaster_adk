@@ -1,0 +1,6 @@
+rule_id,keywords,category,priority,recommended_action,source_id,effective_date,data_status
+DR-R001,trapped|collapsed structure|serious injury|rising water inside|active landslide,immediate_danger,critical,Provide an immediate safety warning and advise contacting the relevant local emergency service,DR-005,2026-08-19,SUPPLIED-RECORD
+DR-R002,landslide|slope movement|ground crack|falling rocks|mud movement,landslide,critical,Check the recorded incident status and matching safety guidance,DR-005,2026-08-19,SUPPLIED-RECORD
+DR-R003,flood|floodwater|water rising|house flooded|river rising,flood,high,Check the recorded incident status and matching safety guidance,DR-005,2026-08-19,SUPPLIED-RECORD
+DR-R004,road blocked|route blocked|bridge closed|debris|access blocked,blocked_route,urgent,Check the recorded route incident before presenting guidance,DR-005,2026-08-19,SUPPLIED-RECORD
+DR-R005,shelter|relief centre|relief center|food|drinking water|assistance point,relief_request,normal,Find a listed relief point for the supplied area and assistance type,DR-005,2026-08-19,SUPPLIED-RECORD

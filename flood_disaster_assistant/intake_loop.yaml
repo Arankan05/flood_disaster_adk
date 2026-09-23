@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: intake_loop
+agent_class: LoopAgent
+description: >-
+  Bounded missing-information and retry step. Repeats intake_agent until the
+  request details are validated, one focused question is needed, or a
+  not-found result is recorded. Stops after at most 2 iterations.
+max_iterations: 2
+sub_agents:
+  - config_path: intake_agent.yaml

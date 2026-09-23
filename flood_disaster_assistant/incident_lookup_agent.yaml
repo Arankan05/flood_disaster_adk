@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: incident_lookup_agent
+agent_class: LlmAgent
+model: gemini-2.5-flash
+description: Looks up the recorded incident for the area and incident type.
+instruction: |
+  Call lookup_incident_status once with area "{area?}" and incident_type
+  "{incident_type?}".
+  Reply with the returned result only, as compact "field: value" lines,
+  copying every value exactly (incident_id, area, incident_type, status,
+  priority, summary, recorded_update, source_id, effective_date,
+  data_status). If the status is NOT_FOUND or NEEDS_CLARIFICATION, reply with
+  that status and the returned message or options. Do not add anything.
+include_contents: none
+disallow_transfer_to_parent: true
+disallow_transfer_to_peers: true
+output_key: incident_result
+tools:
+  - name: flood_disaster_assistant.tools.lookup_incident_status
+before_agent_callbacks:
+  - name: flood_disaster_assistant.callbacks.workflow_gate

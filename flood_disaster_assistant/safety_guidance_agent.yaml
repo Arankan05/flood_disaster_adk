@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: safety_guidance_agent
+agent_class: LlmAgent
+model: gemini-2.5-flash
+description: Retrieves the recorded safety guidance for the classified issue.
+instruction: |
+  The classification result is: {classification?}
+
+  Call get_safety_guidance once with incident_type set to the classification
+  category and priority set to the classification priority. If there is no
+  classification, use incident_type "{incident_type?}" and an empty priority.
+  Reply with the returned result only, as compact "field: value" lines,
+  copying every value exactly (guidance_id, incident_type, priority,
+  guidance, avoid, escalation_note, source_id, effective_date, data_status).
+  If the status is NOT_FOUND, reply with that status and message.
+include_contents: none
+disallow_transfer_to_parent: true
+disallow_transfer_to_peers: true
+output_key: guidance_result
+tools:
+  - name: flood_disaster_assistant.tools.get_safety_guidance
+before_agent_callbacks:
+  - name: flood_disaster_assistant.callbacks.workflow_gate

@@ -1,0 +1,7 @@
+relief_id,area,assistance_type,name,location_description,services,recorded_status,source_id,effective_date,data_status
+RP-001,Colombo,temporary_shelter,Colombo Community Relief Point A,Central municipal service zone,temporary shelter|drinking water|basic supplies,listed,DR-003,2026-08-19,SUPPLIED-RECORD
+RP-002,Colombo,information_point,Colombo Assistance Information Point,North municipal service zone,incident information|referral guidance|basic supplies,listed,DR-003,2026-08-19,SUPPLIED-RECORD
+RP-003,Ratnapura,temporary_shelter,Ratnapura Community Relief Point A,Central district service zone,temporary shelter|drinking water|basic supplies,listed,DR-003,2026-08-19,SUPPLIED-RECORD
+RP-004,Ratnapura,relief_supplies,Ratnapura Relief Supplies Point,South district service zone,drinking water|dry food|hygiene supplies,listed,DR-003,2026-08-19,SUPPLIED-RECORD
+RP-005,Kegalle,temporary_shelter,Kegalle Community Relief Point A,Central district service zone,temporary shelter|drinking water|basic supplies,listed,DR-003,2026-08-19,SUPPLIED-RECORD
+RP-006,Kegalle,first_aid_information,Kegalle First-Aid Support Point,East district service zone,basic first-aid information|referral guidance,listed,DR-003,2026-08-19,SUPPLIED-RECORD

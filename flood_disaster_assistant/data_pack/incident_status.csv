@@ -1,0 +1,7 @@
+incident_id,area,incident_type,status,priority,summary,recorded_update,source_id,effective_date,data_status
+INC-001,Colombo,flood,monitoring,high,Localized surface flooding recorded near low-lying access roads,2026-08-19T17:00,DR-001,2026-08-19,SUPPLIED-RECORD
+INC-002,Colombo,blocked_route,restricted,urgent,Standing water recorded on one local access route,2026-08-19T18:30,DR-001,2026-08-19,SUPPLIED-RECORD
+INC-003,Ratnapura,flood,warning_recorded,critical,River-level rise and household access disruption recorded,2026-08-19T16:00,DR-001,2026-08-19,SUPPLIED-RECORD
+INC-004,Ratnapura,landslide,watch_recorded,critical,Slope-instability indicators recorded near a hillside access area,2026-08-19T15:30,DR-001,2026-08-19,SUPPLIED-RECORD
+INC-005,Kegalle,landslide,restricted_area,critical,Slope movement recorded with local access restrictions,2026-08-19T16:30,DR-001,2026-08-19,SUPPLIED-RECORD
+INC-006,Kegalle,blocked_route,closed_recorded,urgent,Debris recorded as obstructing a local access road,2026-08-19T17:15,DR-001,2026-08-19,SUPPLIED-RECORD

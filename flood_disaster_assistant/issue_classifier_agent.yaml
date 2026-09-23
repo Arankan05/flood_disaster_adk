@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: issue_classifier_agent
+agent_class: LlmAgent
+model: gemini-2.5-flash
+description: >-
+  Classifies the recorded request with the supplied issue rules (category,
+  priority, recommended action).
+instruction: |
+  You classify the user's issue using only the supplied rules.
+
+  Recorded request:
+  - request_type: {request_type?}
+  - problem_description: {problem_description?}
+  - incident_type: {incident_type?}
+
+  Call classify_issue once with these three values exactly as recorded.
+  Then reply with one line in this form:
+  "Classification: <category> | priority <priority> | rule <rule_id> | source <source_id>"
+  If the tool returns NOT_FOUND, reply "Classification: no supplied rule
+  matched." Do not add advice.
+include_contents: none
+disallow_transfer_to_parent: true
+disallow_transfer_to_peers: true
+output_key: classification_summary
+tools:
+  - name: flood_disaster_assistant.tools.classify_issue
+before_agent_callbacks:
+  - name: flood_disaster_assistant.callbacks.workflow_gate
